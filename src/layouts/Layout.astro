@@ -4,8 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Portafolio de Brayan Guti, ingeniero de software especializado en desarrollo frontend con conocimientos en backend y bases de datos.">
+ 	 	<meta name="keywords" content="Brayan Guti, Desarrollador Frontend, Ingeniero de Software, Desarrollo Web, Portafolio">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{Astro.props.pageTitle}</title>
 	</head>
 	<body>
 		<slot />
@@ -13,10 +19,37 @@
 </html>
 
 <style>
+	html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+  	box-sizing: inherit;
+	}
+
 	html,
 	body {
+		font-family: "IBM Plex Sans", serif;
 		margin: 0;
 		width: 100%;
 		height: 100%;
 	}
+	
+	:root {
+	  --bg-color: #ffffff;
+	  --text-color: #000000;
+		--verde-auxiliar: #2d50b1;
+	}
+
+	[data-theme="dark"] {
+	  --bg-color: #0A2342;
+	  --text-color: #EAE8FF;
+		--verde-auxiliar: #1DD3B0;
+	}
+
+	body {
+	  background-color: var(--bg-color);
+	  color: var(--text-color);
+	  transition: background-color 0.3s ease, color 0.3s ease;	
+	}
+
 </style>
