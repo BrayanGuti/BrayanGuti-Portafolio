@@ -1,5 +1,10 @@
 <header>
-  <h2>My Site</h2>
+
+  <nav>
+    <a href="">Projectos</a>
+    <a href="">Skills</a>
+  </nav>
+
   <button id="theme-toggle" aria-label="Cambiar tema">
     🌙
   </button>
@@ -9,15 +14,33 @@
 <style>
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 10vh;
     padding: 0 1rem;
   }
 
-  h1 {
+  nav{
+    display: flex;
+    gap: 1rem;
+    background-color: var(--buttons-color);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+  }
 
-    margin: 0;
+  nav a{
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: none;
   }
 
 </style>

@@ -35,21 +35,43 @@
 	}
 	
 	:root {
-	  --bg-color: #ffffff;
-	  --text-color: #000000;
+	  --bg-color: rgb(212, 201, 201);
+	  --text-color: #0e0d0d;
+		
 		--verde-auxiliar: #2d50b1;
+		--amarillo-auxiliar: #EC4E20;
+		--buttons-color: rgba(255, 255, 255, 0.6);
+
+		--circle-color: rgb(255, 255, 255);
+		--circle-color2: rgb(255, 255, 255);
+		--circle-color3: rgb(255, 255, 255);
 	}
 
 	[data-theme="dark"] {
-	  --bg-color: #0A2342;
+	  --bg-color: rgb(10, 35, 67);
 	  --text-color: #EAE8FF;
+
 		--verde-auxiliar: #1DD3B0;
+		--amarillo-auxiliar: #FFF07C;
+		--buttons-color: rgba(43, 48, 54, 0.5);
+
+		--circle-color: rgba(45, 57, 216, 0.719);
+		--circle-color2: rgba(10, 35, 67, 0.6);
+		--circle-color3: rgba(0, 0, 0, 0.9);
 	}
 
 	body {
-	  background-color: var(--bg-color);
-	  color: var(--text-color);
-	  transition: background-color 0.3s ease, color 0.3s ease;	
-	}
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle, 
+        var(--circle-color) 0%, 
+        var(--circle-color2) 60%, 
+        var(--circle-color3) 100%);
+    
+    background-attachment: fixed; 
+    background-size: 300% 300%;
+    transition: background 0.3s ease;
+    color: var(--text-color);
+}
+
 
 </style>
