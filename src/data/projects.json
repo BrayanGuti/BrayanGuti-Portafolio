@@ -1,0 +1,21 @@
+[
+  {
+    "title": "ChessMaster",
+    "imageSrc": "/ChessMaster.webp",
+    "imageAlt": "ChessMaster image",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados para una mejor experiencia.",
+    "previewUrl": "https://preview-tu-proyecto.com",
+    "githubUrl": "https://github.com/tu-proyecto"
+  },
+  {
+    "title": "ChessMaster",
+    "imageSrc": "/ChessMaster.webp",
+    "imageAlt": "ChessMaster image",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados para una mejor experiencia.",
+    "previewUrl": "https://preview-tu-proyecto.com",
+    "githubUrl": "https://github.com/tu-proyecto"
+  }
+
+]

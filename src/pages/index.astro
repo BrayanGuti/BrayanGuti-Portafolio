@@ -1,8 +1,10 @@
 ---
-import Header from '../components/Header.astro';
-import Presentation from '../components/presentation.astro';
+import Header from '../components/Header/Header.astro';
+import Presentation from '../components/Presentation/Presentation.astro';
 import Layout from '../layouts/Layout.astro';
 import MainContainer from '../components/MainContainer.astro';
+import Projects from '../components/Projects/ProjectsSection.astro';
+import Skills from '../components/Skills/Skills.astro';
 ---
 
 <Layout pageTitle="Brayan Guti | Desarrollador Frontend">	
@@ -10,6 +12,7 @@ import MainContainer from '../components/MainContainer.astro';
 
 	<MainContainer>
 		<Presentation/>
+		<Projects/>
 	</MainContainer>
 
 	
