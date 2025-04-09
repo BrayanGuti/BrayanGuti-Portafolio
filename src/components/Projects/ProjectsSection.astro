@@ -2,7 +2,7 @@
 import ProjectCard from "../Projects/ProjectCard.astro";
 import projects from "../../data/projects.json";
 ---
-<section id="Proyectos">
+<section class="Proyectos" id="Proyectos">
   <div class="title">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        width="522.468px" height="522.469px" viewBox="0 0 522.468 522.469" style="enable-background:new 0 0 522.468 522.469;"
@@ -46,6 +46,10 @@ import projects from "../../data/projects.json";
 
 
 <style>
+  section{
+    padding-bottom: 2rem;
+  }
+
   .title{
     display: flex;
     flex-direction: row;
