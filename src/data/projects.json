@@ -7,5 +7,14 @@
     "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados para una mejor experiencia.",
     "previewUrl": "https://chess-master-phi.vercel.app/",
     "githubUrl": "https://github.com/BrayanGuti/ChessMaster"
+  },
+  {
+    "title": "ChessMaster",
+    "imageSrc": "/ChessMaster.webp",
+    "imageAlt": "ChessMaster image",
+    "technologies": ["React.js", "typescript"],
+    "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados para una mejor experiencia.",
+    "previewUrl": "https://chess-master-phi.vercel.app/",
+    "githubUrl": "https://github.com/BrayanGuti/ChessMaster"
   }
 ]
