@@ -15,8 +15,7 @@ themeToggle.addEventListener('click', () => {
 // Detectar el tema del sistema o cargar el tema guardado
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme || 'dark';
     setTheme(initialTheme);
 });

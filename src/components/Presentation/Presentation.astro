@@ -1,5 +1,8 @@
 <section class="presentation-section">
   <div class="presentation-text">
+    <figure class="brayanguti-picture-container">
+      <img class="brayanguti-picture" src="./BrayanGuti.webp" alt="Foto de BrayanGuti">
+    </figure>
     <h1>Hola, soy <span>BrayanGuti</span></h1>
     <p>Soy ingeniero de software con un enfoque en <span>desarrollar interfaces visualmente atractivas y altamente funcionales</span>. Mi experiencia en frontend se complementa con habilidades en backend y bases de datos, permitiéndome ofrecer soluciones completas y efectivas.</p>
 
@@ -14,23 +17,51 @@
       </div>
     </div>
   </div>
-  <div class="holographic-container">
-		<img src="xdddds.png" alt="Imagen 2" class="image image1">
-		<img src="BrayanGuti.webp" alt="Imagen 1" class="image image2">
-	</div>
 </section>
 
 <style>
+  .brayanguti-picture-container{
+    padding: 0;
+    height: min-content;
+    width: min-content;
+    margin-left: 50px;
+  }
+  
+  @media (max-width: 768px){
+    .brayanguti-picture-container{
+      margin-left: 0;
+    }
+  }
+
+
+  .brayanguti-picture{
+    height: auto;
+    width: 200px;
+    border-radius: 999px;
+  }
+  
+
   section {
-    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 5fr 4fr;
     gap: 2rem;
+    margin: 0 30vw 0 20vw;
+  }
+
+  @media (max-width: 768px){
+    section {
+      height: 90vh;
+    }
   }
 
   @media (max-width: 768px){
     section{
       grid-template-columns: 1fr;
+      margin: 0;
     }
   }
 
@@ -41,8 +72,16 @@
     width: 100%;
   }
 
+  @media (max-width: 768px){
+    .presentation-text {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
   h1 {
     font-size: 2.5rem;
+    margin-bottom: .5rem;
   }
 
   @media (max-width: 768px){
@@ -100,43 +139,4 @@
     text-decoration: none;
     color: inherit;
   }
-
-  .holographic-container {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px){
-    .holographic-container{
-      height: 50vh;
-    }
-  }
-
-  .image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .image1 {
-    opacity: 1;
-    z-index: 1;
-  }
-
-  .image2 {
-    opacity: 0;
-    z-index: 2;
-  }
-
-  .holographic-container:hover .image1 {
-    opacity: 0;
-  }
-
-  .holographic-container:hover .image2 {
-    opacity: 1;
-  }
-
 </style>
