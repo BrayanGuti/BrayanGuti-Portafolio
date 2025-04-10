@@ -1,5 +1,4 @@
 <header>
-
   <nav>
     <a href="">Proyectos</a>
     <a href="">Skills</a>
@@ -13,14 +12,20 @@
 
 <style>
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
     padding: 0 1rem;
+    background-color: var(--background-color); /* Asegúrate de que el fondo sea visible */
+    z-index: 1000; /* Para que esté por encima de otros elementos */
   }
 
-  nav{
+  nav {
     display: flex;
     gap: 1rem;
     background-color: var(--buttons-color);
@@ -28,12 +33,12 @@
     border-radius: 9999px;
   }
 
-  nav a{
+  nav a {
     text-decoration: none;
     color: var(--text-color);
   }
 
-  button{
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,5 +47,4 @@
     font-size: 1.2rem;
     border: none;
   }
-
 </style>

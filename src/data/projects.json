@@ -4,7 +4,7 @@
     "imageSrc": "/ChessMaster.webp",
     "imageAlt": "ChessMaster image",
     "technologies": ["React.js", "TypeScript"],
-    "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados para una mejor experiencia.",
+    "description": "ChessMaster es un juego de ajedrez en línea creado desde cero, con una lógica de juego desarrollada sin depender de bibliotecas especializadas. Permite partidas 1v1 locales en una interfaz intuitiva con movimientos resaltados y manejo de estados globales mediante Zustand.",
     "previewUrl": "https://chess-master-phi.vercel.app/",
     "githubUrl": "https://github.com/BrayanGuti/ChessMaster"
   },
@@ -12,8 +12,8 @@
     "title": "WebScraping",
     "imageSrc": "/WebScraping.webp",
     "imageAlt": "WebScraping image",
-    "technologies": ["Python"],
-    "description": "WebScraping es un proyecto diseñado para automatizar la recolección de datos desde distintas páginas web, permitiendo acceder a información estructurada que normalmente solo está disponible en formato visual. Utiliza herramientas como requests, BeautifulSoup y pandas para extraer y procesar datos de manera eficiente.",
+    "technologies": ["Python", "SQL"],
+    "description": "WebScraping es un proyecto que permite obtener información actualizada en tiempo real sobre cualquier criptomoneda. Reúne datos desde distintas fuentes en línea, los organiza de forma clara y los deja listos para ser almacenados o analizados fácilmente en una base de datos.",
     "previewUrl": "",
     "githubUrl": "https://github.com/BrayanGuti/WebScraping"
   }

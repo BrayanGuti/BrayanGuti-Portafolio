@@ -18,6 +18,7 @@
       name="keywords"
       content="Brayan Guti, Desarrollador Frontend, Ingeniero de Software, Desarrollo Web, Portafolio"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.pageTitle}</title>
   </head>
@@ -51,13 +52,61 @@
     --bg-color: rgb(212, 201, 201);
     --text-color: #0e0d0d;
 
-    --verde-auxiliar: #2d50b1;
+
+    --verde-auxiliar: #1E4FB2;
     --amarillo-auxiliar: #EC4E20;
     --buttons-color: rgba(255, 255, 255, 0.6);
+
 
     --circle-color: rgb(255, 255, 255);
     --circle-color2: rgb(255, 255, 255);
     --circle-color3: rgb(255, 255, 255);
+  }
+
+  [data-theme="light"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    background-image: 
+      linear-gradient(120deg, rgba(255,255,255,0.6) 0%, rgba(240,240,240,0.9) 100%),
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 80%),
+      radial-gradient(circle at 80% 70%, rgba(230, 230, 230, 0.2) 0%, transparent 80%);
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: lighten;
+    position: relative;
+    z-index: 0;
+  }
+  
+  [data-theme="light"] body::before {
+    content: "";
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120vw;
+    height: 120vh;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(220, 220, 220, 0.103),
+      rgba(220, 220, 220, 0.534) 1px,
+      transparent 2px,
+      transparent 20px
+    );
+    z-index: -2;
+    pointer-events: none;
+    animation: gentleDrift 1s ease-in-out infinite alternate;
+    opacity: 0.4;
+  }
+  
+  @keyframes gentleDrift {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate(5px, 10px) rotate(0.5deg);
+    }
   }
 
   [data-theme="dark"] {
