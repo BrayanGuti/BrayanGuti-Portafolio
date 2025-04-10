@@ -4,7 +4,7 @@ Este es el repositorio de mi portafolio personal desarrollado con **Astro**, **R
 
 ## 📸 Demo en vivo
 
-Puedes ver el portafolio funcionando en: https://brayanguti-portafolio.netlify.app
+Puedes ver el portafolio funcionando en: https://brayan-guti-portafolio.vercel.app/
 
 ## 🚀 Tecnologías principales
 
