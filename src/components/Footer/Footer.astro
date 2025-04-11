@@ -1,0 +1,45 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-content-container">
+    <div class="footer-content-left">
+      <h4>BrayanGuti</h4>
+      <p>&copy; {currentYear} Algunos derechos reservados</p>
+    </div>
+    <nav>
+      <a href="">Linedin</a>
+      <a href="">Github</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-color);
+  }
+  
+  .footer-content-container{
+    margin: 0 10vw;
+    height: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-content-left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-content-left h4, .footer-content-left p{
+    margin: 0;
+  }
+
+</style>
