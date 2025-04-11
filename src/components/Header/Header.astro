@@ -3,12 +3,12 @@
     <a href="#Proyectos">Proyectos</a>
     <a href="">Skills</a>
     <a href="mailto:brag.863@gmail.com">Contáctame</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">🌙</button>
   </nav>
 
-  <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
   <script src="/src/scripts/theme.js"></script>
-  <button id="language-toggle" aria-label="Cambiar idioma">🇪🇸</button>
-  <script src="/src/scripts/language.js"></script>
+  <!-- <button id="language-toggle" aria-label="Cambiar idioma">🇪🇸</button> -->
+  <!-- <script src="/src/scripts/language.js"></script> -->
 </header>
 
 <script src="/src/scripts/header-fixed.js"></script>
@@ -31,6 +31,7 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  margin-bottom: 10vh;
 }
 
 nav {
@@ -41,6 +42,14 @@ nav {
   background-color: transparent; /* transparente */
   backdrop-filter: blur(8px);
   transition: background-color 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle{
+  [data-theme="dark"] & {
+    padding-bottom: 5px;
+  }
 }
 
 [data-theme="dark"] nav {
