@@ -1,50 +1,90 @@
-<header>
-  <nav>
+<header id="main-header">
+  <nav id="main-nav">
     <a href="#Proyectos">Proyectos</a>
     <a href="">Skills</a>
+    <a href="mailto:brag.863@gmail.com">Contáctame</a>
   </nav>
 
-  <button id="theme-toggle" aria-label="Cambiar tema">
-    🌙
-  </button>
+  <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
   <script src="/src/scripts/theme.js"></script>
-  <button id="language-toggle" aria-label="Cambiar tema">
-    🇪🇸
-  </button>
+  <button id="language-toggle" aria-label="Cambiar idioma">🇪🇸</button>
   <script src="/src/scripts/language.js"></script>
 </header>
 
+<script src="/src/scripts/header-fixed.js"></script>
+
+
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    padding: 0 1rem;
-    background-color: var(--background-color); 
-    z-index: 1000; 
-  }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  padding: 0 1rem;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  nav {
-    display: flex;
-    gap: 1rem;
-    background-color: var(--buttons-color);
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-  }
+nav {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: transparent; /* transparente */
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+}
 
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
+[data-theme="dark"] nav {
+  background-color: rgba(43, 48, 54, 0.2);
+}
+
+nav.nav-scrolled {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  [data-theme="dark"] & {
+    background-color: rgb(10, 27, 48);
   }
+  
+}
+
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+nav a:hover {
+  color: var(--verde-auxiliar); /* o el color que prefieras para hover */
+}
 
   button {
     display: flex;

@@ -24,11 +24,14 @@ const currentYear = new Date().getFullYear();
     position: relative;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(122, 120, 120, 0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.5rem ;
-    color: white;
+    color: var(--text-color);
     z-index: 10;
+    [data-theme="dark"] & {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
 
   .footer {
@@ -54,6 +57,16 @@ const currentYear = new Date().getFullYear();
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: 768px){
+    .footer-content-container {
+      padding: 0;
+    }
+
+    .footer {
+      padding: 1rem 0;
+    }
   }
 
   .footer-content-left {
