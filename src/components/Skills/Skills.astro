@@ -1,74 +1,176 @@
----
-/*
-// import { skills } from '../data/skills'; // TODO: reactivar import cuando externalices los datos
-*/
+--- 
 
 const skills = [
-  { name: "JavaScript", icon: "/icons/javascript.svg" },
-  { name: "Python", icon: "/icons/python.svg" },
-  { name: "TypeScript", icon: "/icons/typescript.svg" },
-  { name: "HTML", icon: "/icons/html.svg" },
-  { name: "CSS", icon: "/icons/css.svg" },
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "Astro", icon: "/icons/astro.svg" },
-  { name: "Django", icon: "/icons/django.svg" },
-  { name: "SQL", icon: "/icons/sql.svg" },
-  { name: "Docker", icon: "/icons/docker.svg" },
-  { name: "Git", icon: "/icons/git.svg" },
-  { name: "GitHub", icon: "/icons/github.svg" },
-  { name: "VSCode", icon: "/icons/vscode.svg" },
-  { name: "Figma", icon: "/icons/figma.svg" },
+  {
+    name: "JavaScript",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+  },
+  {
+    name: "Python",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+  },
+  {
+    name: "TypeScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+  },
+  {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+  },
+  {
+    name: "Astro",
+    icon: "https://miro.medium.com/v2/resize:fit:1400/1*nLbfO_PdTSpeCdZQuUr8RQ.png"
+  },
+  {
+    name: "Django",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+  },
+  {
+    name: "SQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+  },
+  {
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+  },
+  {
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+  },
+  {
+    name: "GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+  },
+  {
+    name: "VSCode",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+  },
+  {
+    name: "Figma",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+  }
 ];
 
 ---
 
-<section class="skills-section">
-  <h2>🚀 Mis Tecnologías</h2>
+<section id="Skills" class="skills-section" aria-labelledby="skills-heading">
+  <div class="title title-color">
+    <svg width="50px" height="50px" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M77.3,55.7L70,44.9l0-0.9c0-13.2-10.8-24-24-24c-1.9,0-3.8,0.2-5.7,0.7C29.7,23.1,22,32.9,22,44 c0,4.9,1.2,9.3,3.6,12.7c4.2,6,7,10.8,5.3,17.3c-0.4,1.5-0.1,3,0.9,4.2c0.9,1.2,2.2,1.8,3.7,1.8h19.7c2.3,0,4.3-1.6,4.7-3.8 c0.1-0.4,0.2-0.8,0.2-1.2c0.2-1.2,1.2-2,2.4-2h1.4c2.2,0,4.1-1.3,4.7-3.4c0.6-2.3,1.4-5.6,1.5-9.6h5.2c0.9,0,1.8-0.8,2.2-1.6 C77.9,57.6,77.8,56.3,77.3,55.7z M61.4,42c-0.8,1.3-2.4,2-4.7,2c-12.3,0-13.2,9-13.2,13.3c0,2-1.6,3.7-3.6,3.7h-0.3 c-1.7,0-3.1-1.2-3.5-2.9c-0.4-1.8-1.6-2.8-2.8-3.7c-0.8-0.6-1.6-1.2-2-2.1c-1.1-2.3-2.2-5-2.2-8.4c0-7.8,5.4-14.6,12.7-16.3 c1.4-0.3,2.7-0.5,4.1-0.5c6.8,0,12.9,4.1,15.5,10.3C61.5,37.7,62.6,40.1,61.4,42z"></path> </g> </g></svg>   
+    <h2 id="skills-heading">Skills</h2>
+  </div>
   <div class="skills-grid">
     {skills.map(skill => (
-      <div class="skill-card" title={skill.name}>
+      <div class="skill-card">
         <img src={skill.icon} alt={skill.name} />
-        {/* Si quieres mostrar el nombre debajo, descomenta esta línea */}
-        {/* <span>{skill.name}</span> */}
+        <p>{skill.name}</p> 
       </div>
     ))}
   </div>
 </section>
 
 <style>
-  .skills-section {
-    padding: 2rem;
-    text-align: center;
+.skills-section {
+  padding: 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.skills-grid {
+  padding: 5vh 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-card {
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1 1 120px;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: scale(1.15) rotate(3deg);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill-card p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .skills-grid {
+    padding: 3vh 1rem;
+    gap: 1rem;
+    padding: 0;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    backdrop-filter: blur(10px);
-  }
 
   .skill-card {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 120px;
+    padding: 0;
   }
 
-  .skill-card:hover {
-    transform: scale(1.15) rotate(3deg);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  .title h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card {
+    flex: 1 1 100px;
+    max-width: 100px;
+    padding: 0.75rem;
   }
 
   .skill-card img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
+
+  .title h2 {
+    font-size: 1.4rem;
+  }
+
+  .skills-section {
+    padding: 1rem;
+  }
+}
+
 </style>
