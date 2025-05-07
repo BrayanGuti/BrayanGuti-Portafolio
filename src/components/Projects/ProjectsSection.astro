@@ -48,9 +48,15 @@ import projects from "../../data/projects";
 
 <style>
   section{
-    padding-bottom: 2rem;
+    padding: 2rem;
   }
 
+  @media (max-width: 480px) {
+    section{
+      padding: 1rem;
+    }
+  }
+  
   .title{
     display: flex;
     flex-direction: row;
@@ -75,7 +81,6 @@ import projects from "../../data/projects";
   .projects-container{
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
     gap: 20px;
     justify-content: center;
   }
