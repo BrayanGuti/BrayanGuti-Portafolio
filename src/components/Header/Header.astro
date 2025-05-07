@@ -2,10 +2,11 @@
   <nav id="main-nav">
     <!-- Menú normal para desktop -->
     <div class="desktop-menu">
-      <a href="#Proyectos">Proyectos</a>
-      <a href="#Skills">Skills</a>
-      <a href="#Sobre-mi">Sobre mí</a>
-      <a href="mailto:brag.863@gmail.com">Contáctame</a>
+      <a data-i18n="header_proyectos" href="#Proyectos"></a>
+      <a data-i18n="header_skills" href="#Skills"></a>
+      <a data-i18n="header_sobre_mi" href="#Sobre-mi"></a>
+      <a data-i18n="header_contactame" href="mailto:brag.863@gmail.com"></a>
+      <button class="toggle-lang" id="desktop-toggle-lang"></button>
       <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">🌙</button>
     </div>
     
@@ -20,70 +21,43 @@
   <!-- Menú móvil (sidebar) -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-content">
-      <button class="theme-toggle mobile-theme" id="mobile-theme-toggle" aria-label="Cambiar tema"><span>🌙</span></button>
-      <a href="#Proyectos">Proyectos</a>
-      <a href="#Skills">Skills</a>
-      <a href="#Sobre-mi">Sobre mí</a>
-      <a href="mailto:brag.863@gmail.com">Contáctame</a>
+      <div class="mobile-menu-header">
+        <button class="toggle-lang" id="mobile-toggle-lang"></button>
+        <button class="theme-toggle mobile-theme" id="mobile-theme-toggle" aria-label="Cambiar tema">🌙</button>
+      </div>
+      <a data-i18n="header_proyectos" href="#Proyectos"></a>
+      <a data-i18n="header_skills" href="#Skills"></a>
+      <a data-i18n="header_sobre_mi" href="#Sobre-mi"></a>
+      <a data-i18n="header_contactame" href="mailto:brag.863@gmail.com"></a>
     </div>
   </div>
-
+  <script src="/src/scripts/switch-language.js"></script>
   <script src="/src/scripts/theme.js"></script>
+  <script src="/src/scripts/header-fixed.js"></script>
+  <script src="/src/scripts/mobile-lateral-nav.js"></script>  
 </header>
-
-<script src="/src/scripts/header-fixed.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const themeToggle = document.getElementById('theme-toggle');
-  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-  
-  // Toggle del menú móvil
-  hamburger.addEventListener('click', function() {
-    this.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    
-    // Bloquear el scroll del body cuando el menú está abierto
-    if (mobileMenu.classList.contains('open')) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  });
-  
-  // Cerrar menú al hacer clic en un enlace
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-  
-  // Sincronizar el toggle de tema entre desktop y móvil
-  if (themeToggle && mobileThemeToggle) {
-    mobileThemeToggle.addEventListener('click', function() {
-      themeToggle.click();
-    });
-    
-    themeToggle.addEventListener('click', function() {
-      // Actualizar el icono en el menú móvil para que coincida
-      mobileThemeToggle.textContent = this.textContent;
-    });
-  }
-});
-</script>
+<span class="space"></span>
 <style>
 html {
   scroll-behavior: smooth;
 }
+.space {
+  display: block;
+  height: 5vh; /* Altura del header */
+}
+
+.mobile-menu-header{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 20px;
+}
+
 
 header {
   position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
   height: 10vh;
   padding: 0 1rem;
   background-color: var(--background-color);
@@ -91,7 +65,6 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  margin-bottom: 10vh;
 }
 
 nav {
@@ -101,6 +74,15 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 0.5rem 1rem;
+}
+
+.toggle-lang img{
+  width: 24px;
+  height: 15px;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 .desktop-menu {
