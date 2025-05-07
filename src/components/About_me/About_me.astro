@@ -1,3 +1,7 @@
+---
+import AboutMeCanvas from './AboutMeCanvas.jsx';
+---
+
 <section id="Sobre-mi" class="about-me-section" aria-labelledby="about-me-heading">
   <div class="about-me-title">
     <div class="title title-color">
@@ -29,14 +33,13 @@
       
 
       <div class="about-me-drawing">
-        <canvas id="neural-net-canvas"></canvas>        
+        <AboutMeCanvas client:only="react" />
       </div>
     </div>
 
   </div>
 </section>
 
-<script src="/src/scripts/about-me-canvas.js"></script>
 
 
 
