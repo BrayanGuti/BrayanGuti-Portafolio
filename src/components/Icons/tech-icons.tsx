@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TechIcon({ tech }: { tech: string }) {
+export default function TechIcon({ tech }: { tech: string }) {
   switch (tech) {
     case 'react':
       return (

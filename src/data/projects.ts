@@ -1,4 +1,4 @@
-[
+const projects = [
   {
     "title": "ChessMaster",
     "imageSrc": "/ChessMaster.webp",
@@ -17,4 +17,6 @@
     "previewUrl": "",
     "githubUrl": "https://github.com/BrayanGuti/WebScraping"
   }
-]
+];
+
+export default projects;
