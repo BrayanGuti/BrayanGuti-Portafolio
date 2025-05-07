@@ -25,6 +25,18 @@ export default function TechIcon({ tech }: { tech: string }) {
         return (
           <img width="24" height="24" src="https://img.icons8.com/fluency/48/database--v1.png" alt="database--v1"/>
         )
+      case 'next':
+        return (
+          <img width="24" height="24" src="https://img.icons8.com/fluency/48/nextjs.png" alt="nextjs"/>
+        )
+      case 'django':
+        return (
+          <img width="19" height="24" src="https://static-00.iconduck.com/assets.00/django-icon-1606x2048-lwmw1z73.png" alt="django"/>
+        )
+      case 'postgresql':
+        return (
+          <img  width="24" height="24" src="postgresql.svg" alt="postgreesql"/>
+        )
     default:
       return null
   }

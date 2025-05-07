@@ -81,8 +81,16 @@ import projects from "../../data/projects";
   .projects-container{
     display: flex;
     flex-direction: column;
+    padding: 0 5%;
     gap: 20px;
     justify-content: center;
+  }
+
+  @media (max-width: 800px) {
+    .projects-container{
+      padding: 0;
+    }
+      
   }
 
 
