@@ -3,8 +3,13 @@
     <figure class="brayanguti-picture-container">
       <img class="brayanguti-picture" src="./BrayanGuti.webp" alt="Foto de BrayanGuti">
     </figure>
-    <h1>Hola, soy <span>BrayanGuti</span></h1>
-    <p>Soy ingeniero de software con un enfoque en <span>desarrollar interfaces visualmente atractivas y altamente funcionales</span>. Mi experiencia en frontend se complementa con habilidades en backend y bases de datos, permitiéndome ofrecer soluciones completas y efectivas.</p>
+    <h1 data-i18n="presentation_h1">Hola, soy <span data-i18n="presentation_h1_span">BrayanGuti</span></h1>
+    <p>
+      <span data-i18n="presentation_p_intro_part1" class="p_intro" >Soy ingeniero de software con un enfoque en</span>
+      <span data-i18n="presentation_p_intro_part2_highlight"class="p_intro_highlight" >desarrollar interfaces visualmente atractivas y altamente funcionales</span>.
+      <span data-i18n="presentation_p_intro_part3" class="p_intro">Mi experiencia en frontend se complementa con habilidades en backend y bases de datos, permitiéndome ofrecer soluciones completas y efectivas.</span>
+    </p>
+    
 
     <div class="presentation-text-links">
       <div class="presentation-links-button">
@@ -17,7 +22,7 @@
             <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></rect>
           </g>
         </svg>
-        <a href="https://github.com/BrayanGuti" target="_blank">Contáctame</a>
+        <a data-i18n="presentation_boton_contacame" href="https://github.com/BrayanGuti" target="_blank">Contáctame</a>
       </div>
       <div class="presentation-links-button">
         <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
@@ -107,7 +112,12 @@
     text-align: left;
   }
 
-  p span {
+  .p_intro{
+    font-weight: 400;
+    color: var(--text-color);
+  }
+
+  .p_intro_highlight{
     font-weight: 600;
     color: var(--amarillo-auxiliar);
   }

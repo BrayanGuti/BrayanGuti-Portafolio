@@ -10,25 +10,25 @@ import AboutMeCanvas from './AboutMeCanvas.jsx';
         <circle cx="12" cy="8" fill="currentColor" r="4"/>
         <path d="M20,19v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V19a6,6,0,0,1,6-6h4A6,6,0,0,1,20,19Z" fill="currentColor"/>
       </svg>      
-      <h2 id="about-me-heading">Sobre mí</h2>
+      <h2 data-i18n="about_me_h2" id="about-me-heading">Sobre mí</h2>
     </div>
 
     <div class="about-me-content">
       <div>
         <p>
-          Soy un <span>desarrollador web apasionado por crear experiencias digitales únicas</span>. 
-          Disfruto explorando nuevas tecnologías y perfeccionando mis habilidades día a día. 
-          Actualmente, me encuentro inmerso en el mundo del desarrollo de aplicaciones web y backend, 
-          con un interés creciente en la inteligencia artificial y su impacto en el desarrollo de software.
-        </p>
-        <p>
+          <span data-i18n="about_me_p_dev_intro_part1">Soy un</span>
+          <span class="highlight" data-i18n="about_me_p_dev_intro_highlight">desarrollador web apasionado por crear experiencias digitales únicas</span>.
+          <span data-i18n="about_me_p_dev_intro_part2">Disfruto explorando nuevas tecnologías y perfeccionando mis habilidades día a día. Actualmente, me encuentro inmerso en el mundo del desarrollo de aplicaciones web y backend, con un interés creciente en la inteligencia artificial y su impacto en el desarrollo de software.</span>
+        </p>        
+        <p  data-i18n="about_me_p_dev_middle_pargraph">
           En mi tiempo libre, me gusta sumergirme en un buen libro, disfrutar del cine y dejarme llevar por la música. 
           También dedico tiempo a aprender por cuenta propia y a dar vida a ideas a través de pequeños proyectos personales.
-        </p>        
-        <p>
-          Si quieres conocer más sobre mí o mis proyectos, estaré encantado de conversar. 
-          Siempre estoy <span>abierto a nuevas oportunidades, ideas y colaboraciones</span>.
         </p>
+        <p>
+          <span data-i18n="about_me_p_contact_final_paragraph">Si quieres conocer más sobre mí o mis proyectos, estaré encantado de conversar.</span>
+          <span data-i18n="about_me_p_contact_final_paragraph_highlight" class="highlight">Siempre estoy abierto a nuevas oportunidades, ideas y colaboraciones</span>.
+        </p>
+        
       </div>
       
 
@@ -80,7 +80,7 @@ p {
   }
 }
 
-span {
+.highlight {
   color: #0D6EFD;
   [data-theme="dark"] & {
     color: #4EA8FF;
