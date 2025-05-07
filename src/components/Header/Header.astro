@@ -1,20 +1,79 @@
 <header id="main-header">
   <nav id="main-nav">
-    <a href="#Proyectos">Proyectos</a>
-    <a href="#Skills">Skills</a>
-    <a href="#Sobre-mi">Sobre mí</a>
-    <a href="mailto:brag.863@gmail.com">Contáctame</a>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    <!-- Menú normal para desktop -->
+    <div class="desktop-menu">
+      <a href="#Proyectos">Proyectos</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Sobre-mi">Sobre mí</a>
+      <a href="mailto:brag.863@gmail.com">Contáctame</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </div>
+    
+    <!-- Botón hamburguesa para móvil -->
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </nav>
+  
+  <!-- Menú móvil (sidebar) -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <button class="theme-toggle mobile-theme" id="mobile-theme-toggle" aria-label="Cambiar tema"><span>🌙</span></button>
+      <a href="#Proyectos">Proyectos</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Sobre-mi">Sobre mí</a>
+      <a href="mailto:brag.863@gmail.com">Contáctame</a>
+    </div>
+  </div>
 
   <script src="/src/scripts/theme.js"></script>
-  <!-- <button id="language-toggle" aria-label="Cambiar idioma">🇪🇸</button> -->
-  <!-- <script src="/src/scripts/language.js"></script> -->
 </header>
 
 <script src="/src/scripts/header-fixed.js"></script>
-
-
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const themeToggle = document.getElementById('theme-toggle');
+  const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+  
+  // Toggle del menú móvil
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    
+    // Bloquear el scroll del body cuando el menú está abierto
+    if (mobileMenu.classList.contains('open')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Cerrar menú al hacer clic en un enlace
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+  
+  // Sincronizar el toggle de tema entre desktop y móvil
+  if (themeToggle && mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', function() {
+      themeToggle.click();
+    });
+    
+    themeToggle.addEventListener('click', function() {
+      // Actualizar el icono en el menú móvil para que coincida
+      mobileThemeToggle.textContent = this.textContent;
+    });
+  }
+});
+</script>
 <style>
 html {
   scroll-behavior: smooth;
@@ -35,46 +94,42 @@ header {
   margin-bottom: 10vh;
 }
 
-@media (max-width: 768px){
-    header {
-      height: 8vh;
-      padding: 0 0.5rem;
-    }
-      
-  }
-
 nav {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.desktop-menu {
   display: flex;
   gap: 0.7rem;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background-color: transparent; /* transparente */
+  background-color: transparent;
   backdrop-filter: blur(8px);
   transition: background-color 0.3s ease;
   align-items: center;
   justify-content: center;
-  max-width: 85vw;
 }
 
-.theme-toggle{
+.theme-toggle {
   [data-theme="dark"] & {
     padding-bottom: 5px;
   }
 }
 
-[data-theme="dark"] nav {
-  background-color: rgba(43, 48, 54, 0.2);
-}
 
-nav.nav-scrolled {
+
+nav.nav-scrolled .desktop-menu {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   [data-theme="dark"] & {
     background-color: rgb(10, 27, 48);
   }
-  
 }
-
 
 nav a {
   position: relative;
@@ -83,14 +138,6 @@ nav a {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-
-
-@media (max-width: 768px){
-  nav a {
-    font-size: 0.8rem;
-  }
-      
-  }
 
 nav a::after {
   content: "";
@@ -110,21 +157,145 @@ nav a:hover::after {
 }
 
 nav a:hover {
-  color: var(--verde-auxiliar); /* o el color que prefieras para hover */
+  color: var(--verde-auxiliar);
 }
 
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: 1.2rem;
-    border: none;
-  }
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.2rem;
+  border: none;
+}
 
-  .language-toggle{
-    display: flex;
-    flex-direction: row;
+/* Estilos para el menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 2.5vw;
+  z-index: 1100;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Menú móvil (sidebar) */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #c6c8ca;
+  border-left: 1px solid #011b36;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1050;
+  padding-top: 80px;
+  [data-theme="dark"] & {
+    background-color: #03080f;
+    border-left: 1px solid #011b36;
   }
+}
+
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 25px;
+}
+
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
+  [data-theme="dark"] & {
+    border-bottom: 1px solid rgb(182, 178, 178);
+  }
+}
+
+.mobile-menu a:hover {
+  color: var(--verde-auxiliar);
+}
+
+.mobile-theme {
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.mobile-theme span {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+/* Estilos cuando el menú está abierto */
+.mobile-menu.open {
+  right: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  header {
+    height: 8vh;
+    padding: 0 0.5rem;
+    justify-content: flex-end;
+  }
+  
+  .desktop-menu {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  nav {
+    padding: 0.5rem;
+    justify-content: flex-end;
+  }
+  
+
+  
+  .mobile-menu.nav-scrolled {
+    background-color: rgb(255, 255, 255);
+    [data-theme="dark"] & {
+      background-color: rgb(10, 27, 48);
+    }
+  }
+}
 </style>
