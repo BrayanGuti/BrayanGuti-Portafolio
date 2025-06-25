@@ -33,26 +33,31 @@
 </section>
 
 <style>
-  .brayanguti-picture-container{
-    padding: 0;
-    height: min-content;
-    width: min-content;
-  }
-  
-  @media (max-width: 768px){
-    .brayanguti-picture-container{
-      margin-left: 0;
-    }
+  .brayanguti-picture-container {
+      padding: 0;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-
-  .brayanguti-picture{
-    height: auto;
-    width: 250px;
-    border-radius: 999px;
+  @media (max-width: 768px) {
+      .brayanguti-picture-container {
+          width: 200px;
+          height: 200px;
+      }
   }
-  
 
+  .brayanguti-picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+  }  
   section {
     display: flex;
     flex-direction: column;
