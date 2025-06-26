@@ -4,7 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const desktopToggleButton = document.getElementById("desktop-toggle-lang");
   const mobileToggleButton = document.getElementById("mobile-toggle-lang");
   const textElements = document.querySelectorAll("[data-i18n]");
-  let currentLang = localStorage.getItem("lang") || "es";
+  
+  // Verificar si es la primera vez que se carga la página
+  let isFirstLoad = !localStorage.getItem("lang");
+  
+  // Siempre empezar en inglés en la primera carga, después usar localStorage
+  let currentLang = isFirstLoad ? "en" : localStorage.getItem("lang") || "en";
+  
+  // Si es primera carga, guardar inglés en localStorage
+  if (isFirstLoad) {
+    localStorage.setItem("lang", "en");
+  }
 
   const applyTranslations = () => {
     textElements.forEach((el) => {
@@ -25,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.title = translations[currentLang]["title"];
     updateToggleButtonImages();
   };
-  
-
 
   const updateToggleButtonImages = () => {
     const flagHTML = currentLang === "es" 
@@ -51,5 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileToggleButton.addEventListener("click", toggleLanguage);
   }
 
-  applyTranslations(); // Inicial
+  // Aplicar traducciones iniciales
+  applyTranslations();
 });
